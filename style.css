@@ -176,6 +176,10 @@ input, textarea {
   border: 0;
   border-radius: 5px;
 }
+textarea {
+  width: 361px;
+  height: 57px;
+}
 .form-btn {
   background-color: rgba(0, 38, 255, 0.733);
   color: aliceblue;
@@ -191,10 +195,7 @@ input, textarea {
   position: relative;
   top: 5px;
 }
-select {
-  display: block;
-  margin: 0 auto;
-}
+
 @media screen and (max-width: 900px) {
   
   .container {
@@ -243,9 +244,6 @@ select {
   }
   .menus2 {
     display: none;
-  }
-  #about img {
-    border-radius: 50%;
   }
   #skills li {
     width:100%;

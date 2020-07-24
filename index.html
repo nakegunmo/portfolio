@@ -11,7 +11,9 @@
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.6/lity.css' />  
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.6/lity.js'></script> 
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
   </head>
 </head>  
 <body>
@@ -118,20 +120,17 @@
         <div class="form-container">
           <h1>CONTACT</h1>
           
-          <form method="post" action="mail.php">
-            <!-- <table class="formTable"> -->
-    
-                
-              <input size="48" type="text" name="お名前" placeholder="Your Name" />
-              <input size="48" type="mail" name="Email" placeholder="Your Email">
-              <input size="48" type="text" name="ご用件" placeholder="Subject">
-              <textarea name="お問い合わせ内容" cols="50" rows="5" placeholder="Messages"></textarea>
-            
-          <!-- </table> -->
-          <p align="center">
-            <input class="form-btn" type="submit" value="　 Submit 　" />
-          </p>
-        </form>
+          <form action="https://api.staticforms.xyz/submit" method="post">
+            <input size="48" type="text" name="name" placeholder="Your Name">
+            <input size="48" type="text" name="email" placeholder="Your Email">
+            <textarea  name="message" placeholder="messages"></textarea>
+            <input type="text" name="honeypot" style="display:none">
+            <input type="hidden" name="accessKey" value="79c0361f-f4c2-4252-b5bf-c81643fa57f6">
+            <input type="hidden" name="subject" value="Contact us from - example.com">
+            <input type="hidden" name="replyTo" value="@">
+            <input type="hidden" name="redirectTo" value="https://www.aizulab.com/blog/free-contact-form-service/">
+            <input type="submit" value="Submit" class="form-btn">
+          </form>
 
       </div>
     </div>
@@ -151,10 +150,31 @@
       'scrollTop':position-70
     },200)
   })
-});</script>
+});
+
+  $(function () {
+    $("#contactForm").validate({
+      rules: {
+        name: {
+          required: "*お名前を入力してください", // 入力必須チェック
+          rangelength: [1, 50], // 最小１文字、最大５０文字
+        },
+        email: {
+          required: "*メールアドレスを入力してください", // 入力必須チェック
+          email: "*正しいメールアドレス形式で入力してください", // メールアドレス形式チェック
+        },
+        message: {
+          required: "*メッセージを入力してください" // 入力必須チェック
+        }
+      }
+    });
+  });
+</script>
 </body>
 </html>
               
+    
+                
               
                 
               

@@ -176,10 +176,7 @@ input, textarea {
   border: 0;
   border-radius: 5px;
 }
-textarea {
-  width: 361px;
-  height: 57px;
-}
+
 .form-btn {
   background-color: rgba(0, 38, 255, 0.733);
   color: aliceblue;
@@ -211,6 +208,9 @@ textarea {
   #skills li {
     width: 50%;
     margin-top: 30px;
+  }
+  #works img {
+    width: 80%;
   }
 }
 

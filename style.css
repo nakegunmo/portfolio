@@ -2,6 +2,9 @@
   list-style: none;
   text-decoration: none;
 }
+body {
+  margin: 0;
+}
 h1 {
   text-align: center;
 }
@@ -50,7 +53,7 @@ aside a {
 }
 input[type="checkbox"] {
   position: absolute;
-  left: -50vw;
+  left: -100vw;
 }
 
 header {
@@ -89,7 +92,7 @@ main {
   color: aliceblue;
 }
 #home h1 {
-  font-size: 50px;
+  font-size: 30px;
 }
 #about {
   display: flex;
@@ -151,12 +154,22 @@ main h1 {
 #works h1 {
   padding-top: 30px;
 }
-#works p {
+#works span {
+  padding: 5px 10px;
+  background-color: rgba(255, 255, 255, 0.685);
+  border-radius: 25px;
+}
+.works-contents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   padding-bottom: 30px;
 }
+
 .work img {
   width: 300px;
   padding: 0;
+  margin-bottom: 10px;
 }
 .work img:hover {
   opacity: 0.8;
@@ -216,6 +229,7 @@ input, textarea {
 
 @media screen and (max-width: 700px) {
   header {
+    width: 100%;
     background-color: rgba(255, 255, 255, 0);
   }
   .open, .close {
@@ -223,7 +237,7 @@ input, textarea {
   }
   .open {
     position: absolute;
-    right: 50px;
+    right: 30px;
   }
   aside {
     position: absolute;
@@ -245,9 +259,15 @@ input, textarea {
   .menus2 {
     display: none;
   }
+  .container {
+    width: 100%;
+  }
   #skills li {
     width:100%;
   } 
+  input, textarea {
+    width:90%;
+  }
 }
 
 
